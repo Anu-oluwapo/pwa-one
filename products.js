@@ -34,5 +34,15 @@ let products = [
       "image": "images/laser-pointer.jpg",
       "availableInventory": 25,
       "rating": 4
+    },
+
+    {
+      "id": 1006,
+      "title": "Fraser Jointer",
+      "description": "Drive your cat crazy with this <em>amazing</em> product.",
+      "price": 49.99,
+      "image": "images/fraser.jpg",
+      "availableInventory": 25,
+      "rating": 4
     }
   ]

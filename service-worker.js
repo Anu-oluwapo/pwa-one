@@ -20,4 +20,19 @@ self.addEventListener('install', (e) => {
             return cache.addAll(cacheFiles);
         })
     )
+});
+
+self.addEventListener('fetch', function(e) {
+    e.respondWith(
+        caches.match(e.request).then(function (r) {
+            // Download the files if its in the cache
+            return r || fetch (e.request).then(function(response) {
+                // add all the new files to the cache
+                return caches.open(cacheName).then(function (cache){
+                    cache.put(e.request, response.clone());
+                    return response
+                })
+            })
+        })
+    )
 })
